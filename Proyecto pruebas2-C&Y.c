@@ -1,8 +1,7 @@
  #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
- //listo ya
- //YA VOY A DORMIR
+ //GITHUB APROBADO
 char matrizpo1 [8][8];
 char matrizpo2 [8][8];
 char matar1 [8][8];
