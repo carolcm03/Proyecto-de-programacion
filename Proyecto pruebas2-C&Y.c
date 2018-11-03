@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-//HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//
+//OJALA FUNCIONEEEEEEEEEEEEEEEEEES//
 char matrizpo1 [8][8];
 char matrizpo2 [8][8];
 char matar1 [8][8];
