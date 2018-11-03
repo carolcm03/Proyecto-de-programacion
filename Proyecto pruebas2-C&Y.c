@@ -187,7 +187,7 @@ int main (){
      printf ("\tA\t B\t C\t D\t E\t F\t G\t H");
      printf ("\n\t____________________________________________________________");
   for (i=0;i<8;i++){
-       printf ("\n %i", (i+1));//CAMBIOOOOOOOOOOOOOO//
+       printf ("\n %i", (i+1));
          for (j=0; j<8; j++){
              printf ("\t%c  |  ", matrizpo1 [i][j]);
        }
