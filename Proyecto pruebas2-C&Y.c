@@ -1,11 +1,8 @@
  #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-<<<<<<< HEAD
-=======
-//OJALA FUNCIONEEEEEEEEEEEEEEEEEES//
->>>>>>> 82fbf41982e3e813f18352e8ff718163c0dcea12
+ //listo ya
+ //YA VOY A DORMIR
 char matrizpo1 [8][8];
 char matrizpo2 [8][8];
 char matar1 [8][8];
