@@ -1,11 +1,7 @@
  #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-<<<<<<< HEAD
- //GITHUB APROBADO
-=======
- //que tengas pesadilllas
->>>>>>> 9da79f9b826b033148dc73ea9e96ec9468753e2f
+
 char matrizpo1 [8][8];
 char matrizpo2 [8][8];
 char matar1 [8][8];
