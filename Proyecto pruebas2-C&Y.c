@@ -41,6 +41,8 @@ int funletran(){//transformar de letra a numero
 	 lenum=6;
   else if (letra=='h' || letra == 'H')
 	 lenum=7;
+	else
+		lenum=100;
 }
 char funposi2(){//poner nave en Vertical, arriba o abajo
 	int i,j;
@@ -316,6 +318,16 @@ int main (){
               scanf("%i",&num);
 			funletran();
        }
+        while (lenum<0||lenum>7){
+	             printf("\nColumna fuera de rango\n");
+	          scanf("%s",&letra);
+			funletran();
+       }
+       while (num<1||num>8){
+	             printf("\nFila fuera de rango\n");
+              scanf("%i",&num);
+       }
+
        matrizpo1[num-1][lenum]='X';
        fila=num-1;
        colum=lenum;
