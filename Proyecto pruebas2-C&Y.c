@@ -14,7 +14,7 @@ matrizpo1[fila][colum]='.';
 printf("\n Hemos eliminado la posicion inicial, vuelve a ingresar otra\t");
  scanf("%s %i",&letra,&num);
  funletran();
-        while (matrizpo1[num-1][lenum]=='X'){
+        while (matrizpo1[num-1][lenum]=='O'){
 	          printf("POSICION EN USO\n");
 	          scanf("%s",&letra);
               scanf("%i",&num);
@@ -22,6 +22,7 @@ printf("\n Hemos eliminado la posicion inicial, vuelve a ingresar otra\t");
        }
   fila=num-1;
   colum=lenum;
+
 
 }
 int funletran(){//transformar de letra a numero
@@ -51,97 +52,132 @@ char funposi2(){//poner nave en Vertical, arriba o abajo
 	      		if (fila==0){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-                if (matrizpo1[fila-1][colum]=='X'){//Si la posicion en horizontal new ya exitia llamo a la funcion funexist para volver a ingresar una posicion inicial//
+                if (matrizpo1[fila-1][colum]=='O'){//Si la posicion en horizontal new ya exitia llamo a la funcion funexist para volver a ingresar una posicion inicial//
 				    funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila-1][colum]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila-1][colum]=='O'){
+	                    funexist();
+	                    matrizpo1[fila][colum]='O';
+	                    matrizpo1[fila-1][colum]='O';
+				    }
+				    matrizpo1[fila-1][colum]='O';
 					}
 				else{
-				  matrizpo1[fila-1][colum]='X';}
+				  matrizpo1[fila-1][colum]='O';}
 	      }
 
 		  else if (numna==2 || numna==3){
 		  		if (fila==0||fila==1){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-		      if (matrizpo1[fila-1][colum]=='X' || matrizpo1[fila-2][colum]=='X'){
+		      if (matrizpo1[fila-1][colum]=='O' || matrizpo1[fila-2][colum]=='O'){
 		  			funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila-1][colum]='X';
-				    matrizpo1[fila-2][colum]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila-1][colum]=='O' || matrizpo1[fila-2][colum]=='O'){
+					  funexist();
+					matrizpo1[fila-1][colum]='O';
+				    matrizpo1[fila-2][colum]='O';
+				    }
+				    matrizpo1[fila-1][colum]='O';
+				    matrizpo1[fila-2][colum]='O';
 		  		}
 		  		else {
-		  	matrizpo1[fila-1][colum]='X';
-			matrizpo1[fila-2][colum]='X';}
+		  	matrizpo1[fila-1][colum]='O';
+			matrizpo1[fila-2][colum]='O';}
 		  }
 		  else{
 		  	if (fila==0||fila==1||fila==2){
 		      	printf("NO SE PUEDE");
 		      	funexist();
 	      		}
-		  		if (matrizpo1[fila-1][colum]=='X' || matrizpo1[fila-2][colum]=='X'|| matrizpo1[fila-3][colum]=='X'){
+		  		if (matrizpo1[fila-1][colum]=='O' || matrizpo1[fila-2][colum]=='O'|| matrizpo1[fila-3][colum]=='O'){
 		  			funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila-1][colum]='X';
-				    matrizpo1[fila-2][colum]='X';
-		            matrizpo1[fila-3][colum]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila-1][colum]=='O' || matrizpo1[fila-2][colum]=='O'|| matrizpo1[fila-3][colum]=='O'){
+	                  funexist();
+				    matrizpo1[fila][colum]='O';
+					 matrizpo1[fila-1][colum]='O';
+				    matrizpo1[fila-2][colum]='O';
+		            matrizpo1[fila-3][colum]='O';
+				    }
+				    matrizpo1[fila-1][colum]='O';
+				    matrizpo1[fila-2][colum]='O';
+		            matrizpo1[fila-3][colum]='O';
 		  		}
-			matrizpo1[fila-1][colum]='X';
-		    matrizpo1[fila-2][colum]='X';
-			matrizpo1[fila-3][colum]='X';}
+			matrizpo1[fila-1][colum]='O';
+		    matrizpo1[fila-2][colum]='O';
+			matrizpo1[fila-3][colum]='O';}
 	  }
 	  else{
 	      if (numna==0||numna==1){
 	      		if (fila==7){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-	        if (matrizpo1[fila+1][colum]=='X'){
+	        if (matrizpo1[fila+1][colum]=='O'){
 				    funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila+1][colum]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila+1][colum]=='O'){
+					funexist();
+				    matrizpo1[fila][colum]='O';
+	                matrizpo1[fila+1][colum]='O';
+				    }
+				    matrizpo1[fila+1][colum]='O';
 					}
 			else{
-				  matrizpo1[fila+1][colum]='X';}
+				  matrizpo1[fila+1][colum]='O';}
 
 	      }
 		  else if (numna==2 || numna==3){
 		  		if (fila==7||fila==6){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-		      	if (matrizpo1[fila+1][colum]=='X' || matrizpo1[fila+2][colum]=='X'){
+		      	if (matrizpo1[fila+1][colum]=='O' || matrizpo1[fila+2][colum]=='O'){
 		  			funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila+1][colum]='X';
-				    matrizpo1[fila+2][colum]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila+1][colum]=='O' || matrizpo1[fila+2][colum]=='O'){
+	                 funexist();
+				    matrizpo1[fila][colum]='O';
+					matrizpo1[fila+1][colum]='O';
+				    matrizpo1[fila+2][colum]='O';
+				    }
+				    matrizpo1[fila+1][colum]='O';
+				    matrizpo1[fila+2][colum]='O';
 		  		}
 		  		else {
-				    matrizpo1[fila+1][colum]='X';//si es izquierda le resta 1 o 2 o 3, a la posicion primera y si no, le suma
-			        matrizpo1[fila+2][colum]='X';}
+				    matrizpo1[fila+1][colum]='O';//si es izquierda le resta 1 o 2 o 3, a la posicion primera y si no, le suma
+			        matrizpo1[fila+2][colum]='O';}
 			}
 		  else{
 		  	if ((fila==7||fila==6||fila==5)){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-		    if (matrizpo1[fila+1][colum]=='X' || matrizpo1[fila+2][colum]=='X'|| matrizpo1[fila+3][colum]=='X'){
+		    if (matrizpo1[fila+1][colum]=='O' || matrizpo1[fila+2][colum]=='O'|| matrizpo1[fila+3][colum]=='O'){
 		  			funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila+1][colum]='X';
-				    matrizpo1[fila+2][colum]='X';
-		            matrizpo1[fila+3][colum]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila+1][colum]=='O' || matrizpo1[fila+2][colum]=='O'|| matrizpo1[fila+3][colum]=='O'){
+	                funexist();
+				    matrizpo1[fila][colum]='O';
+					matrizpo1[fila+1][colum]='O';
+				    matrizpo1[fila+2][colum]='O';
+		            matrizpo1[fila+3][colum]='O';
+				    }
+				    matrizpo1[fila+1][colum]='O';
+				    matrizpo1[fila+2][colum]='O';
+		            matrizpo1[fila+3][colum]='O';
 		  		}
-			matrizpo1[fila+1][colum]='X';
-		    matrizpo1[fila+2][colum]='X';
-			matrizpo1[fila+3][colum]='X';}
+			matrizpo1[fila+1][colum]='O';
+		    matrizpo1[fila+2][colum]='O';
+			matrizpo1[fila+3][colum]='O';}
 
 	  }
 
@@ -153,96 +189,133 @@ char funposi3(){//poner naves horizontas, izquierda o derecha
 	      		if (colum==0){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-				if (matrizpo1[fila][colum-1]=='X'){//Si la posicion en horizontal new ya exitia llamo a la funcion funexist para volver a ingresar una posicion inicial//
+				if (matrizpo1[fila][colum-1]=='O'){//Si la posicion en horizontal new ya exitia llamo a la funcion funexist para volver a ingresar una posicion inicial//
 				    funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila][colum-1]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila][colum-1]=='O'){
+	                funexist();
+				    matrizpo1[fila][colum]='O';
+					matrizpo1[fila][colum-1]='O';
+				    }
+				    matrizpo1[fila][colum-1]='O';
 					}
 				else{
-				  matrizpo1[fila][colum-1]='X';}}
+				  matrizpo1[fila][colum-1]='O';}}
 		  else if (numna==2 || numna==3){
 		  	if (colum==0||colum==1){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-		  		if (matrizpo1[fila][colum-1]=='X' || matrizpo1[fila][colum-2]=='X'){
+		  		if (matrizpo1[fila][colum-1]=='O' || matrizpo1[fila][colum-2]=='O'){
 		  			funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila][colum-1]='X';
-				    matrizpo1[fila][colum-2]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila][colum-1]=='O' || matrizpo1[fila][colum-2]=='O'){
+	                 funexist();
+				    matrizpo1[fila][colum]='O';
+					matrizpo1[fila][colum-1]='O';
+				    matrizpo1[fila][colum-2]='O';
+				    }
+				    matrizpo1[fila][colum-1]='O';
+				    matrizpo1[fila][colum-2]='O';
 		  		}
 		  		else {
-		  	matrizpo1[fila][colum-1]='X';//si es izquierda le resta 1 o 2 o 3, a la posicion primera y si no, le suma
-			matrizpo1[fila][colum-2]='X';}
+		  	matrizpo1[fila][colum-1]='O';//si es izquierda le resta 1 o 2 o 3, a la posicion primera y si no, le suma
+			matrizpo1[fila][colum-2]='O';}
 			}
 		  else{
 		  	if (colum==0||colum==1 ||colum==2){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-		  		if (matrizpo1[fila][colum-1]=='X' || matrizpo1[fila][colum-2]=='X'|| matrizpo1[fila][colum-3]=='X'){
+		  		if (matrizpo1[fila][colum-1]=='O' || matrizpo1[fila][colum-2]=='O'|| matrizpo1[fila][colum-3]=='O'){
 		  			funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila][colum-1]='X';
-				    matrizpo1[fila][colum-2]='X';
-				    matrizpo1[fila][colum-3]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila][colum-1]=='O' || matrizpo1[fila][colum-2]=='O'|| matrizpo1[fila][colum-3]=='O'){
+					funexist();
+				    matrizpo1[fila][colum]='O';
+					matrizpo1[fila][colum-1]='O';
+				    matrizpo1[fila][colum-2]='O';
+				    matrizpo1[fila][colum-3]='O';
+				    }
+				    matrizpo1[fila][colum-1]='O';
+				    matrizpo1[fila][colum-2]='O';
+				    matrizpo1[fila][colum-3]='O';
 		  		}
 		  	else {
-			matrizpo1[fila][colum-1]='X';
-		    matrizpo1[fila][colum-2]='X';
-			matrizpo1[fila][colum-3]='X'; }}
+			matrizpo1[fila][colum-1]='O';
+		    matrizpo1[fila][colum-2]='O';
+			matrizpo1[fila][colum-3]='O'; }}
 	  }
 	  else{
 	      if (numna==0||numna==1){
-	      		if (colum==0){
+	      		if (colum==7){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-				if (matrizpo1[fila][colum+1]=='X'){//Si la posicion en horizontal new ya exitia llamo a la funcion funexist para volver a ingresar una posicion inicial//
+				if (matrizpo1[fila][colum+1]=='O'){//Si la posicion en horizontal new ya exitia llamo a la funcion funexist para volver a ingresar una posicion inicial//
 				    funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila][colum+1]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila][colum+1]=='O'){
+					funexist();
+					matrizpo1[fila][colum]='O';
+				    matrizpo1[fila][colum+1]='O';
+				    }
+
+				    matrizpo1[fila][colum+1]='O';
 					}
 				else{
-				  matrizpo1[fila][colum+1]='X';}}
+				  matrizpo1[fila][colum+1]='O';}}
 		  else if (numna==2 || numna==3){
-		  	if (colum==0||colum==1){
+		  	if (colum==7||colum==6){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-		  		if (matrizpo1[fila][colum+1]=='X' || matrizpo1[fila][colum+2]=='X'){
+		  		if (matrizpo1[fila][colum+1]=='O' || matrizpo1[fila][colum+2]=='O'){
 		  			funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila][colum+1]='X';
-				    matrizpo1[fila][colum+2]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila][colum+1]=='O' || matrizpo1[fila][colum+2]=='O'){
+	                funexist();
+				    matrizpo1[fila][colum]='O';
+					matrizpo1[fila][colum+1]='O';
+				    matrizpo1[fila][colum+2]='O';
+				    }
+				    matrizpo1[fila][colum+1]='O';
+				    matrizpo1[fila][colum+2]='O';
 		  		}
 		  		else {
-		  	matrizpo1[fila][colum+1]='X';//si es izquierda le resta 1 o 2 o 3, a la posicion primera y si no, le suma
-			matrizpo1[fila][colum+2]='X';}
+		  	matrizpo1[fila][colum+1]='O';//si es izquierda le resta 1 o 2 o 3, a la posicion primera y si no, le suma
+			matrizpo1[fila][colum+2]='O';}
 			}
 		  else{
-		  	if (colum==0||colum==1||colum==2){
+		  	if (colum==7||colum==6||colum==5){
 		      	printf("NO SE PUEDE");
 		      	funexist();
-		      	matrizpo1[fila][colum]='X';
+		      	matrizpo1[fila][colum]='O';
 	      		}
-		  		if (matrizpo1[fila][colum+1]=='X' || matrizpo1[fila][colum+2]=='X'|| matrizpo1[fila][colum+3]=='X'){
+		  		if (matrizpo1[fila][colum+1]=='O' || matrizpo1[fila][colum+2]=='O'|| matrizpo1[fila][colum+3]=='O'){
 		  			funexist();
-				    matrizpo1[fila][colum]='X';
-				    matrizpo1[fila][colum+1]='X';
-				    matrizpo1[fila][colum+2]='X';
-				    matrizpo1[fila][colum+3]='X';
+				    matrizpo1[fila][colum]='O';
+				    if (matrizpo1[fila][colum+1]=='O' || matrizpo1[fila][colum+2]=='O'|| matrizpo1[fila][colum+3]=='O'){
+	                 funexist();
+				    matrizpo1[fila][colum]='O';
+					matrizpo1[fila][colum+1]='O';
+				    matrizpo1[fila][colum+2]='O';
+				    matrizpo1[fila][colum+3]='O';
+				    }
+				    matrizpo1[fila][colum+1]='O';
+				    matrizpo1[fila][colum+2]='O';
+				    matrizpo1[fila][colum+3]='O';
 		  		}
 		  	else {
-			matrizpo1[fila][colum+1]='X';
-		    matrizpo1[fila][colum+2]='X';
-			matrizpo1[fila][colum+3]='X'; }}
+			matrizpo1[fila][colum+1]='O';
+		    matrizpo1[fila][colum+2]='O';
+			matrizpo1[fila][colum+3]='O'; }}
 
 	  }
 
@@ -272,7 +345,7 @@ void ImprimirBarco(){
 }
 
 
-int main (){
+void main (){
     int i, j,k,nn;
     char name1[15];
     char name2[15];
@@ -312,7 +385,7 @@ int main (){
         scanf("%s %i",&letra,&num);
         printf("\t");
         funletran();
-        while (matrizpo1[num-1][lenum]=='X'){
+        while (matrizpo1[num-1][lenum]=='O'){
 	          printf("POSICION EN USO\n");
 	          scanf("%s",&letra);
               scanf("%i",&num);
@@ -328,7 +401,7 @@ int main (){
               scanf("%i",&num);
        }
 
-       matrizpo1[num-1][lenum]='X';
+       matrizpo1[num-1][lenum]='O';
        fila=num-1;
        colum=lenum;
        printf ("\n¿Posicion\n\t V = vertical  u H = horizontal?\t");
@@ -345,7 +418,9 @@ int main (){
             scanf ("%s", &let2);
      }
         funposi2();
+        system ("cls");
      }
+
      else{
 	   printf("\n \tI = Izquierda  0 D= Derecha\t");
 	     scanf ("%s", &let3);//let2 es arriba o abajo
@@ -354,6 +429,7 @@ int main (){
             scanf ("%s", &let3);
      }
        funposi3();
+       system ("cls");
      }
 printf ("\tA\t B\t C\t D\t E\t F\t G\t H");
      printf ("\n\t____________________________________________________________");
@@ -389,5 +465,6 @@ printf ("\tA\t B\t C\t D\t E\t F\t G\t H");
     }
     printf("\n");
     system ("pause");
-    system("cls");
- }
+    printf("\n");
+    system ("cls");
+}
