@@ -375,7 +375,8 @@ printf ("\tA\t B\t C\t D\t E\t F\t G\t H");
             for (j=0; j<8; j++){
              matrizpo1 [i][j]='.';
        }}
-
+    system ("pause");
+    system("cls");
     }
      printf ("\n\tA\t B\t C\t D\t E\t F\t G\t H");
      printf ("\n\t____________________________________________________________");
