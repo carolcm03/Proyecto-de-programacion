@@ -1,4 +1,4 @@
-  #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -384,6 +384,10 @@ char funposi3(){//poner naves horizontas, izquierda o derecha
 
 }
 
+char fundisparo(){
+
+}
+
 
 void ImprimirBarco(){
     system ("cls");
@@ -409,7 +413,7 @@ void ImprimirBarco(){
 
 
 void main (){
-    int i, j,k,nn;
+    int i, j,k,nn,cc, gana;
     char name1[15];
     char name2[15];
     ImprimirBarco();
@@ -430,6 +434,9 @@ void main (){
         for (i=0;i<8;i++){
              for (j=0; j<8; j++){
                   matrizpo1[i][j]= '.';
+				  matar1 [i][j]='.';
+                  matar2 [i][j]='.';
+
        }
    }
    printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
@@ -440,7 +447,7 @@ void main (){
        }
     }
 
-        for(i=0;i<3;i++){ //numero de naves
+        for(i=0;i<1;i++){ //numero de naves
 		printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         printf ("\n\nNave %i :\n\t",(i+1));
         numna=i;
@@ -523,24 +530,123 @@ if (nn==0){
     system ("pause");
     system("cls");
     }
-    printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
-  for (i=0;i<8;i++){
-       printf ("\n %i\t", (i+1));
+//OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOPOSICIONES DE DISPAROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO//
+do{
+   for(i=0;i<2;i++){//DOSSSSSSSS JUGADORESSSSS//
+	cc=i;//cc es el numero de jugador
+	 printf("\n\nJugador # %i\t ",(i+1));
+	 if (cc==0)
+	 	printf("%s",name1);
+	 else
+	 	printf("%s",name2);
+
+    if (cc==0){
+	printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
+  for (k=0;k<8;k++){
+       printf ("\n %i\t", (k+1));
             for (j=0; j<8; j++){
-            printf ("%c  ", Mjuga1 [i][j]);
+            printf ("%c  ", Mjuga1 [k][j]);
+       }
+    }
+
+  printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
+  for (k=0;k<8;k++){
+       printf ("\n %i\t", (k+1));
+            for (j=0; j<8; j++){
+            printf ("%c  ", matar1 [k][j]);
+       }
+    }}
+   else{
+   		printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
+  for (k=0;k<8;k++){
+       printf ("\n %i\t", (k+1));
+            for (j=0; j<8; j++){
+            printf ("%c  ", Mjuga2 [k][j]);
+       }
+    }
+	printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
+	for (k=0;k<8;k++){
+       printf ("\n %i\t", (k+1));
+            for (j=0; j<8; j++){
+            printf ("%c  ", matar2 [k][j]);
        }
     }
 
 
-printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
-  for (i=0;i<8;i++){
-       printf ("\n %i\t", (i+1));
+   }
+printf("\nIngrese las coordenadas de disparo:\t");
+scanf("%s %i",&letra,&num);
+        printf("\t");
+        funletran();
+		while (lenum<0||lenum>7){
+		      printf("\nColumna fuera de rango\n");
+	          scanf("%s",&letra);
+			  funletran();
+       }
+       while (num<1||num>8){
+			  printf("\nFila fuera de rango\n");
+              scanf("%i",&num);
+       }
+       if (cc==0){
+        while (matar1[num-1][lenum]=='X' && matar1[num-1][lenum]=='-'){
+	          printf("YA INGRESÓ ESA COORDENADA\n");
+	          scanf("%s",&letra);
+              scanf("%i",&num);
+			funletran();
+       }
+       }
+       else{
+		  while (matar2[num-1][lenum]=='X' && matar2[num-1][lenum]=='*'){
+	          printf("YA INGRESÓ ESA COORDENADA\n");
+	          scanf("%s",&letra);
+              scanf("%i",&num);
+			funletran();}
+       }
+       fila=num-1;
+       colum=lenum;
+       if (cc==0){
+       if (Mjuga2[fila][colum]=='O'){
+			matar1[fila][colum]='X';
+			Mjuga2[fila][colum]='X';
+			printf("\nBOOOM");
+       }
+       else if (Mjuga2[fila][colum]=='.'){
+			matar1[fila][colum]='*';
+			Mjuga2[fila][colum]='*';
+       }
+       printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
+		for (k=0;k<8;k++){
+       printf ("\n %i\t", (k+1));
             for (j=0; j<8; j++){
-            printf ("%c  ", Mjuga2 [i][j]);
+            printf ("%c  ", matar1 [k][j]);
+       		}
+    	}
+       }
+       else{
+	      if (Mjuga1[fila][colum]=='O'){
+			matar2[fila][colum]='X';
+			Mjuga1[fila][colum]='X';
+			printf("\nBOOOM");
+       }
+       else if(Mjuga1[fila][colum]=='.'){
+			matar2[fila][colum]='*';
+			Mjuga1[fila][colum]='*';
+
+       }
+       printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
+  for (k=0;k<8;k++){
+       printf ("\n %i\t", (k+1));
+            for (j=0; j<8; j++){
+            printf ("%c  ", matar2 [k][j]);
+       }
+    	}
        }
     }
-    printf("\n");
+}while(gana==1);
+   printf("\n");
     system ("pause");
     printf("\n");
     system ("cls");
-}
+    }
+
+
