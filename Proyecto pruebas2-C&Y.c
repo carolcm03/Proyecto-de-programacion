@@ -447,7 +447,7 @@ void main (){
        }
     }
 
-        for(i=0;i<1;i++){ //numero de naves
+        for(i=0;i<2;i++){ //numero de naves
 		printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         printf ("\n\nNave %i :\n\t",(i+1));
         numna=i;
@@ -606,10 +606,35 @@ scanf("%s %i",&letra,&num);
        colum=lenum;
        if (cc==0){
        if (Mjuga2[fila][colum]=='O'){
+       		while(Mjuga2[fila][colum]=='O'){
 			matar1[fila][colum]='X';
 			Mjuga2[fila][colum]='X';
+			printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
+		    for (k=0;k<8;k++){
+                printf ("\n %i\t", (k+1));
+               for (j=0; j<8; j++){
+                    printf ("%c  ", matar1 [k][j]);
+       		}
+    	}
 			printf("\nBOOOM");
+			printf("\nOtra vezzzzzzzzz");
+			scanf("%s %i",&letra,&num);
+        printf("\t");
+        funletran();
+		while (lenum<0||lenum>7){
+		      printf("\nColumna fuera de rango\n");
+	          scanf("%s",&letra);
+			  funletran();
        }
+       while (num<1||num>8){
+			  printf("\nFila fuera de rango\n");
+              scanf("%i",&num);
+       }
+       fila=num-1;
+       colum=lenum;
+       }
+       matar1[fila][colum]='*';
+       Mjuga2[fila][colum]='*';}
        else if (Mjuga2[fila][colum]=='.'){
 			matar1[fila][colum]='*';
 			Mjuga2[fila][colum]='*';
@@ -622,12 +647,37 @@ scanf("%s %i",&letra,&num);
        		}
     	}
        }
-       else{
+       else{//AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII//
 	      if (Mjuga1[fila][colum]=='O'){
+			while(Mjuga1[fila][colum]=='O'){
 			matar2[fila][colum]='X';
 			Mjuga1[fila][colum]='X';
+			printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
+		    for (k=0;k<8;k++){
+                printf ("\n %i\t", (k+1));
+               for (j=0; j<8; j++){
+                    printf ("%c  ", matar2 [k][j]);
+       		}
+    	}
 			printf("\nBOOOM");
+			printf("\nOtra vezzzzzzzzz");
+			scanf("%s %i",&letra,&num);
+        printf("\t");
+        funletran();
+		while (lenum<0||lenum>7){
+		      printf("\nColumna fuera de rango\n");
+	          scanf("%s",&letra);
+			  funletran();
        }
+       while (num<1||num>8){
+			  printf("\nFila fuera de rango\n");
+              scanf("%i",&num);
+       }
+       fila=num-1;
+       colum=lenum;}
+       matar2[fila][colum]='*';
+       Mjuga1[fila][colum]='*';
+    }
        else if(Mjuga1[fila][colum]=='.'){
 			matar2[fila][colum]='*';
 			Mjuga1[fila][colum]='*';
@@ -641,12 +691,14 @@ scanf("%s %i",&letra,&num);
        }
     	}
        }
-    }
-}while(gana==1);
+
+}
+printf("\n\n\nIngresa valor de gana");
+scanf("%i",&gana);
+} while(gana!=1);
    printf("\n");
     system ("pause");
     printf("\n");
-    system ("cls");
-    }
+    system ("cls");}
 
 
