@@ -4,6 +4,7 @@
 
 char matrizpo1 [8][8];
 char Mjuga1[8][8];
+char Mjuga2[8][8];
 char matar1 [8][8];
 char matar2 [8][8];
 
@@ -52,6 +53,11 @@ char funposi2(){//poner nave en Vertical, arriba o abajo
 	      		if (fila==0){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (fila==0){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
                 if (matrizpo1[fila-1][colum]=='O'){//Si la posicion en horizontal new ya exitia llamo a la funcion funexist para volver a ingresar una posicion inicial//
@@ -72,6 +78,11 @@ char funposi2(){//poner nave en Vertical, arriba o abajo
 		  		if (fila==0||fila==1){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (fila==0||fila==1){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
 		      if (matrizpo1[fila-1][colum]=='O' || matrizpo1[fila-2][colum]=='O'){
@@ -93,6 +104,13 @@ char funposi2(){//poner nave en Vertical, arriba o abajo
 		  	if (fila==0||fila==1||fila==2){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+			if (fila==0||fila==1||fila==2){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
+		      	matrizpo1[fila][colum]='O';
+
 	      		}
 		  		if (matrizpo1[fila-1][colum]=='O' || matrizpo1[fila-2][colum]=='O'|| matrizpo1[fila-3][colum]=='O'){
 		  			funexist();
@@ -117,6 +135,11 @@ char funposi2(){//poner nave en Vertical, arriba o abajo
 	      		if (fila==7){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (fila==7){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
 	        if (matrizpo1[fila+1][colum]=='O'){
@@ -137,6 +160,11 @@ char funposi2(){//poner nave en Vertical, arriba o abajo
 		  		if (fila==7||fila==6){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (fila==7||fila==6){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
 		      	if (matrizpo1[fila+1][colum]=='O' || matrizpo1[fila+2][colum]=='O'){
@@ -159,6 +187,11 @@ char funposi2(){//poner nave en Vertical, arriba o abajo
 		  	if ((fila==7||fila==6||fila==5)){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (fila==7||fila==6||fila==5){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
 		    if (matrizpo1[fila+1][colum]=='O' || matrizpo1[fila+2][colum]=='O'|| matrizpo1[fila+3][colum]=='O'){
@@ -189,6 +222,11 @@ char funposi3(){//poner naves horizontas, izquierda o derecha
 	      		if (colum==0){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (colum==0){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
 				if (matrizpo1[fila][colum-1]=='O'){//Si la posicion en horizontal new ya exitia llamo a la funcion funexist para volver a ingresar una posicion inicial//
@@ -207,6 +245,11 @@ char funposi3(){//poner naves horizontas, izquierda o derecha
 		  	if (colum==0||colum==1){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (colum==0||colum==1){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
 		  		if (matrizpo1[fila][colum-1]=='O' || matrizpo1[fila][colum-2]=='O'){
@@ -229,6 +272,11 @@ char funposi3(){//poner naves horizontas, izquierda o derecha
 		  	if (colum==0||colum==1 ||colum==2){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (colum==0||colum==1||colum==2){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
 		  		if (matrizpo1[fila][colum-1]=='O' || matrizpo1[fila][colum-2]=='O'|| matrizpo1[fila][colum-3]=='O'){
@@ -255,6 +303,11 @@ char funposi3(){//poner naves horizontas, izquierda o derecha
 	      		if (colum==7){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (colum==7){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
 				if (matrizpo1[fila][colum+1]=='O'){//Si la posicion en horizontal new ya exitia llamo a la funcion funexist para volver a ingresar una posicion inicial//
@@ -274,6 +327,11 @@ char funposi3(){//poner naves horizontas, izquierda o derecha
 		  	if (colum==7||colum==6){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (colum==7||colum==6){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
 		  		if (matrizpo1[fila][colum+1]=='O' || matrizpo1[fila][colum+2]=='O'){
@@ -296,6 +354,11 @@ char funposi3(){//poner naves horizontas, izquierda o derecha
 		  	if (colum==7||colum==6||colum==5){
 		      	printf("NO SE PUEDE");
 		      	funexist();
+		      	if (colum==7||colum==6||colum==5){
+			      printf("NO SE PUEDE");
+		      	funexist();
+		      	matrizpo1[fila][colum]='O';
+		      	}
 		      	matrizpo1[fila][colum]='O';
 	      		}
 		  		if (matrizpo1[fila][colum+1]=='O' || matrizpo1[fila][colum+2]=='O'|| matrizpo1[fila][colum+3]=='O'){
@@ -369,16 +432,15 @@ void main (){
                   matrizpo1[i][j]= '.';
        }
    }
-     printf ("\tA\t B\t C\t D\t E\t F\t G\t H");
-     printf ("\n\t____________________________________________________________");
+   printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
   for (i=0;i<8;i++){
-       printf ("\n %i", (i+1));
-         for (j=0; j<8; j++){
-             printf ("\t%c  |  ", matrizpo1 [i][j]);
+       printf ("\n %i\t", (i+1));
+            for (j=0; j<8; j++){
+            printf ("%c  ", matrizpo1 [i][j]);
        }
-       printf ("\n\t____________________________________________________________");
-   }
-        for(i=0;i<5;i++){ //numero de naves
+    }
+
+        for(i=0;i<3;i++){ //numero de naves
 		printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         printf ("\n\nNave %i :\n\t",(i+1));
         numna=i;
@@ -422,7 +484,7 @@ void main (){
      }
 
      else{
-	   printf("\n \tI = Izquierda  0 D= Derecha\t");
+	   printf("\n \tI = Izquierda  o D = Derecha\t");
 	     scanf ("%s", &let3);//let2 es arriba o abajo
 	 while (let3!='I' && let3!='D'){
        		printf("\nIngresa otra vez:\t");
@@ -431,20 +493,27 @@ void main (){
        funposi3();
        system ("cls");
      }
-printf ("\tA\t B\t C\t D\t E\t F\t G\t H");
-     printf ("\n\t____________________________________________________________");
+  printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
   for (k=0;k<8;k++){
-       printf ("\n %i", (k+1));
+       printf ("\n %i\t", (k+1));
             for (j=0; j<8; j++){
-            printf ("\t%c  |  ", matrizpo1 [k][j]);
+            printf ("%c  ", matrizpo1 [k][j]);
        }
-       printf ("\n\t____________________________________________________________");
     }
+
     }
+if (nn==0){
   for (k=0;k<8;k++){
             for (j=0; j<8; j++){
-             matrizpo1 [k][j]=Mjuga1[k][j];
+             Mjuga1[k][j]=matrizpo1 [k][j];
        }
+    }}
+    else {
+	 for (k=0;k<8;k++){
+            for (j=0; j<8; j++){
+             Mjuga2[k][j]=matrizpo1 [k][j];
+       }
+    }
     }
 
    for (i=0;i<8;i++){
@@ -454,14 +523,21 @@ printf ("\tA\t B\t C\t D\t E\t F\t G\t H");
     system ("pause");
     system("cls");
     }
-     printf ("\n\tA\t B\t C\t D\t E\t F\t G\t H");
-     printf ("\n\t____________________________________________________________");
+    printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
   for (i=0;i<8;i++){
-       printf ("\n %i", (i+1));
+       printf ("\n %i\t", (i+1));
             for (j=0; j<8; j++){
-            printf ("\t%c  |  ", Mjuga1 [i][j]);
+            printf ("%c  ", Mjuga1 [i][j]);
        }
-       printf ("\n\t____________________________________________________________");
+    }
+
+
+printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
+  for (i=0;i<8;i++){
+       printf ("\n %i\t", (i+1));
+            for (j=0; j<8; j++){
+            printf ("%c  ", Mjuga2 [i][j]);
+       }
     }
     printf("\n");
     system ("pause");
