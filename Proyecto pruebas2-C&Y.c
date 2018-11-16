@@ -713,4 +713,4 @@ scanf("%s %i",&letra,&num);
     printf("\n");
     system ("cls");}
 
-
+//funcionó
