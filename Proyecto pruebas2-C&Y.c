@@ -607,7 +607,7 @@ scanf("%s %i",&letra,&num);
        colum=lenum;
        if (cc==0){
        if (Mjuga2[fila][colum]=='O'){
-       		while(Mjuga2[fila][colum]=='O' && a!=3){
+       		while(Mjuga2[fila][colum]=='O'){
 			matar1[fila][colum]='X';
 			Mjuga2[fila][colum]='X';
 
@@ -652,7 +652,7 @@ scanf("%s %i",&letra,&num);
     	}
        }
        else{//AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII//
-	      if (Mjuga1[fila][colum]=='O' && b!=3){
+	      if (Mjuga1[fila][colum]=='O'){
 			while(Mjuga1[fila][colum]=='O'){
 			matar2[fila][colum]='X';
 			Mjuga1[fila][colum]='X';
@@ -699,15 +699,19 @@ scanf("%s %i",&letra,&num);
        }
    }
 
-   if(a==3 || b==3){
-    printf ("\nHAS GANADO LA PARTIDA\n");
-   }
- if (cc==0){
+   if (cc==0){
     gana=a;
- }
- else{
-    gana=b;}
-} while(gana==3);
+        if (a==4){
+            printf ("HAZ GANADO LA PARTIDA\n");
+        }
+   }
+   else{
+    gana=b;
+    if (b==4){
+            printf ("\nHAZ GANADO LA PARTIDA\n");
+        }
+   }
+}while (gana!=4);
    printf("\n");
     system ("pause");
     printf("\n");
