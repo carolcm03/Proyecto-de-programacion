@@ -607,10 +607,10 @@ scanf("%s %i",&letra,&num);
        colum=lenum;
        if (cc==0){
        if (Mjuga2[fila][colum]=='O'){
-       		while(Mjuga2[fila][colum]=='O'){
+       		while(Mjuga2[fila][colum]=='O' && a!=3){
 			matar1[fila][colum]='X';
 			Mjuga2[fila][colum]='X';
-			a=a+1;
+
 			printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
 		    for (k=0;k<8;k++){
                 printf ("\n %i\t", (k+1));
@@ -635,6 +635,7 @@ scanf("%s %i",&letra,&num);
        }
        fila=num-1;
        colum=lenum;
+       a=a+1;
        }
        }
        else if (Mjuga2[fila][colum]=='.'){
@@ -651,11 +652,11 @@ scanf("%s %i",&letra,&num);
     	}
        }
        else{//AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII//
-	      if (Mjuga1[fila][colum]=='O'){
+	      if (Mjuga1[fila][colum]=='O' && b!=3){
 			while(Mjuga1[fila][colum]=='O'){
 			matar2[fila][colum]='X';
 			Mjuga1[fila][colum]='X';
-			b=b+1;
+
 			printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
 		    for (k=0;k<8;k++){
                 printf ("\n %i\t", (k+1));
@@ -680,7 +681,8 @@ scanf("%s %i",&letra,&num);
        }
        fila=num-1;
        colum=lenum;
-       }
+
+       b=b+1;}
     }
        else if(Mjuga1[fila][colum]=='.'){
 			matar2[fila][colum]='*';
@@ -697,7 +699,7 @@ scanf("%s %i",&letra,&num);
        }
    }
 
-   if(a==4 || b==4){
+   if(a==3 || b==3){
     printf ("\nHAS GANADO LA PARTIDA\n");
    }
  if (cc==0){
@@ -705,7 +707,7 @@ scanf("%s %i",&letra,&num);
  }
  else{
     gana=b;}
-} while(gana>=4);
+} while(gana==3);
    printf("\n");
     system ("pause");
     printf("\n");
