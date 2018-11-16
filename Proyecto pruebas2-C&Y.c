@@ -10,22 +10,7 @@ char matar2 [8][8];
 
 int lenum, num,fila,colum,numna;
 char letra, let1, let2,let3;
-char funexist(){
-matrizpo1[fila][colum]='.';
-printf("\n Hemos eliminado la posicion inicial, vuelve a ingresar otra\t");
- scanf("%s %i",&letra,&num);
- funletran();
-        while (matrizpo1[num-1][lenum]=='O'){
-	          printf("POSICION EN USO\n");
-	          scanf("%s",&letra);
-              scanf("%i",&num);
-			  funletran();
-       }
-  fila=num-1;
-  colum=lenum;
 
-
-}
 int funletran(){//transformar de letra a numero
  if (letra=='a' || letra == 'A')
 	  lenum=0;
@@ -46,6 +31,21 @@ int funletran(){//transformar de letra a numero
 	else
 		lenum=100;
 }
+char funexist(){
+matrizpo1[fila][colum]='.';
+printf("\n Hemos eliminado la posicion inicial, vuelve a ingresar otra\t");
+ scanf("%s %i",&letra,&num);
+ funletran();
+        while (matrizpo1[num-1][lenum]=='O'){
+	          printf("POSICION EN USO\n");
+	          scanf("%s",&letra);
+              scanf("%i",&num);
+			  funletran();
+       }
+  fila=num-1;
+  colum=lenum;
+}
+
 char funposi2(){//poner nave en Vertical, arriba o abajo
 	int i,j;
 	  if (let2=='A'){
@@ -413,9 +413,10 @@ void ImprimirBarco(){
 
 
 void main (){
-    int i, j,k,nn,cc, gana;
+    int i, j,k,nn,cc, gana, a,b;
     char name1[15];
     char name2[15];
+    a=0;b=0;
     ImprimirBarco();
     printf ("BIENVENIDO A BATTLESHIP\n\n");
 
@@ -609,6 +610,7 @@ scanf("%s %i",&letra,&num);
        		while(Mjuga2[fila][colum]=='O'){
 			matar1[fila][colum]='X';
 			Mjuga2[fila][colum]='X';
+			a=a+1;
 			printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
 		    for (k=0;k<8;k++){
                 printf ("\n %i\t", (k+1));
@@ -618,6 +620,7 @@ scanf("%s %i",&letra,&num);
     	}
 			printf("\nBOOOM");
 			printf("\nOtra vezzzzzzzzz");
+			printf ("\n%i\n", a);
 			scanf("%s %i",&letra,&num);
         printf("\t");
         funletran();
@@ -633,11 +636,11 @@ scanf("%s %i",&letra,&num);
        fila=num-1;
        colum=lenum;
        }
-       matar1[fila][colum]='*';
-       Mjuga2[fila][colum]='*';}
+       }
        else if (Mjuga2[fila][colum]=='.'){
 			matar1[fila][colum]='*';
 			Mjuga2[fila][colum]='*';
+			printf ("\nDISPARO FALLIDO\n");
        }
        printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
 		for (k=0;k<8;k++){
@@ -652,6 +655,7 @@ scanf("%s %i",&letra,&num);
 			while(Mjuga1[fila][colum]=='O'){
 			matar2[fila][colum]='X';
 			Mjuga1[fila][colum]='X';
+			b=b+1;
 			printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
 		    for (k=0;k<8;k++){
                 printf ("\n %i\t", (k+1));
@@ -661,6 +665,7 @@ scanf("%s %i",&letra,&num);
     	}
 			printf("\nBOOOM");
 			printf("\nOtra vezzzzzzzzz");
+			printf ("\n%i\n", b);
 			scanf("%s %i",&letra,&num);
         printf("\t");
         funletran();
@@ -674,14 +679,13 @@ scanf("%s %i",&letra,&num);
               scanf("%i",&num);
        }
        fila=num-1;
-       colum=lenum;}
-       matar2[fila][colum]='*';
-       Mjuga1[fila][colum]='*';
+       colum=lenum;
+       }
     }
        else if(Mjuga1[fila][colum]=='.'){
 			matar2[fila][colum]='*';
 			Mjuga1[fila][colum]='*';
-
+            printf ("\nDISPARO FALLIDO\n");
        }
        printf ("\n\n\n\n        A  B  C  D  E  F  G  H");
   for (k=0;k<8;k++){
@@ -691,11 +695,17 @@ scanf("%s %i",&letra,&num);
        }
     	}
        }
+   }
 
-}
-printf("\n\n\nIngresa valor de gana");
-scanf("%i",&gana);
-} while(gana!=1);
+   if(a==4 || b==4){
+    printf ("\nHAS GANADO LA PARTIDA\n");
+   }
+ if (cc==0){
+    gana=a;
+ }
+ else{
+    gana=b;}
+} while(gana>=4);
    printf("\n");
     system ("pause");
     printf("\n");
